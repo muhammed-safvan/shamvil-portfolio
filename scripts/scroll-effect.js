@@ -18,7 +18,24 @@ export function useSmoothScroll(parent = menuContainer, child = menuLinkWrap) {
 
 export function enableHorizontalScroll(container) {
   container.addEventListener("wheel", (e) => {
-    e.preventDefault(); // Prevent default scrolling behavior
-    container.scrollLeft += e.deltaY; // Scroll horizontally
+      e.preventDefault(); // Prevent default scroll behavior
+
+      // Calculate max horizontal scroll
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+      if (container.scrollLeft < maxScrollLeft) {
+          // Horizontal scroll is not yet completed
+          container.scrollLeft += e.deltaY; // Scroll horizontally
+      } else {
+          // Horizontal scroll completed, now scroll vertically in .scroll-container
+          console.log("Horizontal scrolling completed, now scrolling vertically.");
+
+          const verticalContainer = document.querySelector('.scroll-container');
+          if (verticalContainer) {
+              verticalContainer.scrollTop += e.deltaY; // Scroll vertically
+          } else {
+              console.warn('.scroll-container not found');
+          }
+      }
   });
 }

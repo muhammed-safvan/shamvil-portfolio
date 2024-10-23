@@ -9,6 +9,7 @@ const projectInfoWraps = document.querySelectorAll('.project-info-wrap');
 
 const projectsContainer = document.querySelector('.projects-container');
 
+
 openCloseMenu();
 useSmoothScroll();
 
