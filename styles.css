@@ -1,5 +1,5 @@
 :root {
-    --body-color-1: rgb(23, 26, 36);
+    --body-color-1: rgb(0, 0, 0);
     --main-txt-color: rgb(198, 219, 245);
 }
 
@@ -49,13 +49,26 @@ body {
     overflow-x: hidden;
     height: 100vh;
     width: 100vw;
+    background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
 }
+.scroll-container::-webkit-scrollbar{
+    width: 10px;
+    background-color: rgb(0, 0, 0);
+}
+.scroll-container::-webkit-scrollbar-button{
+    background: #000000;
+}
+.scroll-container::-webkit-scrollbar-thumb{
+    background: #007a7c;
+    border-radius: 5px;
+}
+
 
 main {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: black;
+    background: linear-gradient(to left, #000000, #434343);
 }
 
 main > section {
@@ -224,8 +237,8 @@ section#about {
     z-index: 1;
     position: relative;
 
-    background: linear-gradient(45deg, rgb(60, 60, 60) 0%, #222222 15%, rgb(33, 6, 6) 80%);
-
+    background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
+    margin-bottom: 1.5em;
 }
 
 #about #about-header {
@@ -255,12 +268,12 @@ section#about {
 
 h1.title>.author-name>span {
     font-size: 12vw;
-    color: rgb(17, 95, 46);
 }
 
 #about-header .letters {
     display: inline-block;
     transition: transform 0.4s ease-out;
+    color: #605c3c;
 }
 
 .author-name .letters:hover {
@@ -280,6 +293,7 @@ h1.title>.author-name>span {
     background: transparent;
 }
 
+
 #author-img-wrap img {
     position: absolute;
     bottom: 0;
@@ -294,15 +308,15 @@ h1.title>.author-name>span {
 /*Youtube channel section*/
 section#author-yt-channel {
     color: #222222;
-    background: rgb(1, 55, 21);
+    background: rgb(255, 255, 255);
 
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    margin: 5em 0;
-    width: max-content;
+    margin: 0 0 3em 0;
+    width: fit-content;
     padding: 1vw 3vw;
     border-radius: 0 3vw 3vw 0;
 }
@@ -310,21 +324,20 @@ section#author-yt-channel {
     margin: 2em 0 2em 0;
     width: max-content;
     text-align: left;
-    padding: 2em 2em;
+    padding: 1em 2em;
     overflow: hidden;
     background: transparent;
-    border-bottom: 1px solid black;
-
+    border-bottom: 2px solid rgb(84, 81, 81);
 }
 .section-title * {
-    font-family: "Caveat Brush";
-    color:white ;
+    font-family: sans-serif;
+    color:rgb(89, 87, 87) ;
     margin: 0;
     letter-spacing: 0px;
 }
 
 .section-title h1 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .section-title h2 {
     font-size: 1.7em;
@@ -387,24 +400,27 @@ section#projects {
     overflow-y: auto;
 }
 #projects > #projects-title {
+    margin:auto 10% auto;
+    width: fit-content;
     height: 5em;
-    padding: 1em 2em;
-    background: rgb(0, 0, 79);
-    border: 1px solid orange;
-    border-radius: 10px;
+    background: linear-gradient(to left, #000000, #434343);
+    text-align: center;
+    margin-bottom: 7px;
+    padding: 2em;
+    border-radius: 4em;
 }
 
 #projects-title > h1 {
-    color: #bbb82a;
-    font-size: 1.5em;
+    font-size: 1.6em;
+    color: red;
 }
 
 #projects > .projects-wrapper {
-    padding: 5em 0;
+    padding:  0;
     display: flex;
     flex-direction: column;
     overflow-x: auto;
-    width: 50%;
+    width: 70%;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -416,12 +432,12 @@ section#projects {
     height:100%;
     margin-bottom: 2em;
     padding: 1em;
-    background: #656464;
+    background: #ffffff;
     border-radius: 0 2em 2em 0;
 }
 
 .projects-container > h3 {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
     text-align: center;
     font-size: 1.5em;
 }
@@ -456,21 +472,85 @@ section#projects {
     height: 350px;
     object-fit: cover;
     border-radius: 1em;
+    box-shadow: 0 0 8px rgb(115, 115, 115);
 }
+
+/*footer styles*/
 
 footer {
-    height: 5rem;
-    width: 100vw;
+    background: #303841; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 3em 0 2em 0;
+    box-shadow: 0 0 5px black;
+
+}
+#footer-header{
+    margin: 2em 0 3em 0;
+}
+#footer-title{
+    color: rgb(255, 255, 255);
+    font-size: 3.5em;
+    margin: 0;
+}
+#footer-header h3{
+    margin: 0;
+    padding: 0.5em 0;
+    font-style: italic;
+    text-align: center;
+    font-weight: 100;
 }
 
-footer #contacts {
-    color: white;
+footer .contacts{
     display: flex;
     flex-wrap: wrap;
-    padding: 2em 0;
-    justify-content: space-evenly;
+    flex-shrink: 0;
+    gap: 1em;
+    width: 100%;
+
+    justify-content:center;
+    align-items: center;
+    padding: 0 0 4em 0;
 }
 
-footer span {
-    
+footer > .contacts > div{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+
+    background: transparent;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    width:max-content;
+    height: fit-content;
+
+    transition: transform 0.45s ease-in-out;
+    cursor: pointer;
 }
+
+footer img {
+    box-sizing: border-box;
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    filter: invert(0.9);
+    margin-right: 0.5em;
+}
+
+footer > hr {
+    width: 100%;
+    height: 3px;
+    border: none;
+    background-color: var(--nav-color);
+}
+
+
+footer > .contacts > div:hover {
+    transform: translateY(8px);
+}
+/*media queries*/
